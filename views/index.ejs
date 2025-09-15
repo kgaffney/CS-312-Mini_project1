@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+
+<div class="row">
+  <!-- create post form -->
+  <div class="col-md-4">
+    <h4>New Post</h4>
+    <form action="/add" method="POST">
+      <input type="text" name="author" class="form-control mb-2" placeholder="Your name" required>
+      <input type="text" name="title" class="form-control mb-2" placeholder="Title" required>
+      <textarea name="content" class="form-control mb-2" rows="4" placeholder="Write something..." required></textarea>
+      <button type="submit" class="btn btn-primary w-100">Post</button>
+    </form>
+  </div>
+
+  <!-- post list -->
+  <div class="col-md-8">
+    <h4>Posts</h4>
+    <% if (posts.length === 0) { %>
+      <p>No posts yet.</p>
+    <% } %>
+    <% posts.forEach(post => { %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5><%= post.title %></h5>
+          <small class="text-muted">By <%= post.author %> • <%= post.date %></small>
+          <p><%= post.content %></p>
+          <a href="/edit/<%= post.id %>" class="btn btn-sm btn-outline-primary">Edit</a>
+          <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+            <button class="btn btn-sm btn-outline-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include("partials/footer") %>
