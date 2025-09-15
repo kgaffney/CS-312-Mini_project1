@@ -1,0 +1,25 @@
+{
+  "name": "cs-312-mini_project1",
+  "version": "1.0.0",
+  "description": "This is a simple blog web app for my CS-312 class.   It is made with Node.js, Express.js, and EJS.   There is no database, so posts reset every time the server restarts.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgaffney/CS-312-Mini_project1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgaffney/CS-312-Mini_project1/issues"
+  },
+  "homepage": "https://github.com/kgaffney/CS-312-Mini_project1#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
